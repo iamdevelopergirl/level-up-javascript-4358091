@@ -16,6 +16,15 @@
 
   <script>
     // Write your code here
+    function tickingClock() {
+      const clockElement = document.getElementById('clock');
+      const date = new Date();
+      clockElement.textContent = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}` 
+    }
+
+    setInterval(() => {
+      tickingClock();
+    }, 1000);
     
   </script>
 </body>

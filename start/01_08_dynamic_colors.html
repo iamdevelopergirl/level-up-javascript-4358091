@@ -18,6 +18,14 @@
 
   <script>
     // Write your code here
+    document.addEventListener('click', _handleButtonClick.bind(this));
+    function _handleButtonClick(event) {
+      document.getElementsByTagName('body')[0].style.background = event.target.id;
+    }
+
+    document.addEventListener('click', (event) => {
+      document.body.style.background = event.target.id;
+    });
 
   </script>
 </body>

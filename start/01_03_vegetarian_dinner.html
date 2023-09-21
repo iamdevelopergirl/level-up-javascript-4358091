@@ -34,6 +34,16 @@
       }
     ]
     // Write your code here
+    function renderVegitems() {
+      const ulelement = document.getElementById('menu');
+      const vegItems = menu.filter(item => item.isVegetarian === true);
+      vegItems.map(item => {
+        const liElement = document.createElement('li');
+        liElement.textContent = item.name;
+        ulelement.appendChild(liElement);
+      });
+    }
+    renderVegitems();
 
   </script>
 </body>

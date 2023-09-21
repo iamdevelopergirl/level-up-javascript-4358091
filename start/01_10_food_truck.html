@@ -13,9 +13,38 @@
 
   <!-- Use this element to generate your menu -->
   <ul id="combined-menu"></ul>
+  <!-- <ul id="combined-menu1"></ul> -->
 
   <script>
     // Write your code here
+    function uniqueMenuBkp() {
+      const vendor1 = ['Pizza','Pasta']
+      const vendor2 = ["Tacos", "Burgers"]
+      const vendor3 = ["Pizza"]
+      const vendor4 = ["Burgers", "Fries"]
+
+      const combinedArray = Array.from(new Set([...vendor1, ...vendor2, ...vendor3, ...vendor4]))
+      const combinedMenuElement = document.getElementById('combined-menu');
+      combinedArray.map(elem => {
+        const liElement = document.createElement('li');
+        liElement.textContent = elem;
+        combinedMenuElement.append(liElement);
+      });
+    }
+    
+
+    function uniqueMenu(menus) {
+      let flatMenus = menus.flat();
+      let combinedMenu = new Set();
+      flatMenus.forEach(item => combinedMenu.add(item));
+      const combinedMenuElement = document.getElementById('combined-menu');
+      for(let item of combinedMenu) {
+        const liElement = document.createElement('li');
+        liElement.textContent = item;
+        combinedMenuElement.append(liElement);
+      }
+    }
+    uniqueMenu([['Pizza', 'Pasta'], ["Tacos", "Burgers"], ["Pizza"], ["Burgers", "Fries"]]);
 
   </script>
 </body>

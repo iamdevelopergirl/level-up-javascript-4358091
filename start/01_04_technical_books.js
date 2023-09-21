@@ -31,3 +31,18 @@ class Book {
 }
 
 // Write your code here
+class TechnicalBook extends Book {
+  constructor(title, author, isbn, numOfCopies, edition) {
+    super(title, author, isbn, numOfCopies);
+    this.edition = edition;
+  }
+
+  getEdition() {
+    return `The current version of the book is ${this.edition}`
+  }
+}
+
+const javaBook = new TechnicalBook('Head First Java', 'Rodigrez', '1234567', 20, 2);
+console.log(javaBook.getEdition());
+console.log(javaBook.getAvailability());
+
