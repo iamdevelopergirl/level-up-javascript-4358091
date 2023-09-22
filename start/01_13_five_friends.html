@@ -16,6 +16,18 @@
 
   <script>
     // Write your code here
+    async function yourSpace() {
+      const friendsList = await fetch('https://randomuser.me/api/?results=5');
+      const friendsListJson = await friendsList.json();
+      const timelineElement = document.getElementById('timeline');
+      friendsListJson.results.map(friend => {
+        const imageElement = document.createElement('img');
+        imageElement.src = friend.picture.thumbnail;
+        imageElement.style.padding = '1rem';
+        timelineElement.append(imageElement)
+      });
+    }
+    yourSpace();
     
   </script>
 </body>

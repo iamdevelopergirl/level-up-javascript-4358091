@@ -16,6 +16,25 @@
 
   <script>
     // Write your code here
+    document.addEventListener('click', _handleButtonClick.bind(this));
+    function* trainStops() {
+      yield 'Poughkeepsie';
+      yield 'Newburgh';
+      yield 'Peekskill';
+      yield 'Yonkers';
+      yield 'Broxn';
+      yield 'Grand Central';
+    }
+    const trainStop = trainStops();
+    function _handleButtonClick(event) {
+      const nextStop = trainStop.next();
+      if(nextStop.done) {
+        console.log(`We made it!`);
+        document.getElementById('next-stop').disabled = true;
+        return;
+      }
+      console.log(nextStop.value);
+    }
 
   </script>
 </body>
